@@ -17,7 +17,7 @@ export type CourseEntity = {
   /** Unique identifier */
   id: string;
   courseMenuId: string;
-  name: number;
+  name: string;
   type: "starter" | "main" | "dessert";
 };
 

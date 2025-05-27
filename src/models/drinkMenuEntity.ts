@@ -18,7 +18,7 @@ export type DrinkEntity = {
   /** Unique identifier */
   id: string;
   drinkMenuId: string;
-  name: number;
+  name: string;
 };
 
 export type DrinkPayload = Omit<DrinkEntity, "id">;
