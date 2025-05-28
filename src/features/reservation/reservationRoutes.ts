@@ -16,7 +16,7 @@ export function reservationPublicRoutes(db: import("better-sqlite3").Database) {
   const reservationService = new ReservationService(sqliteReservationRepo);
 
   /**
-   * POST /api/reservations
+   * POST /api/public/reservations
    * Inserts a new reservation after validating the request body.
    */
   router.post(
