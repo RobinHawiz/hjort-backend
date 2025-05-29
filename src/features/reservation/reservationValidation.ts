@@ -9,7 +9,7 @@ import z from "zod";
  * - lastName: non-empty string, max 50 characters
  * - phoneNumber: non-empty string, max 20 characters
  * - email: non-empty string, max 128 characters
- * - message: non-empty string, max 1000 characters
+ * - message: string, max 1000 characters
  * - guestAmount: positive number
  * - reservationDate: non-empty string, date must be in ISO 8601 format
  *
@@ -49,14 +49,9 @@ export const ReservationSchema = z
       .max(128, {
         message: "The email cannot exceed 128 characters.",
       }),
-    message: z
-      .string()
-      .min(1, {
-        message: "The message has to be at least 1 character long.",
-      })
-      .max(1000, {
-        message: "The message cannot exceed 1000 characters.",
-      }),
+    message: z.string().max(1000, {
+      message: "The message cannot exceed 1000 characters.",
+    }),
     guestAmount: z.number().positive(),
     reservationDate: z
       .string()
