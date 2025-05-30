@@ -33,6 +33,10 @@ export async function createApp(): Promise<Express> {
   app.get("/api/health", (_, res) => {
     res.status(200).send("OK");
   });
+  // Auth check route
+  app.get("/api/auth", authenticateToken, (_, res) => {
+    res.status(200).send("OK");
+  });
   // Mount admin user related routes
   app.use("/api/admin", adminUserRoutes(db));
   // Mount reservation related routes
