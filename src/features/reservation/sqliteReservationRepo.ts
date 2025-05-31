@@ -11,7 +11,9 @@ export class SQLiteReservationRepo implements ReservationRepo {
   async findAll(): Promise<Array<ReservationEntity>> {
     const rows = this.dbConnection
       .prepare(
-        "select id, first_name as firstName, last_name as lastName, phone_number as phoneNumber, email, message, guest_amount as guestAmount, reservation_date as reservationDate from reservation"
+        `select id, first_name as firstName, last_name as lastName, phone_number as phoneNumber, 
+         email, message, guest_amount as guestAmount, reservation_date as reservationDate from reservation
+         ORDER BY reservation_date ASC`
       )
       .all() as Array<ReservationEntity>;
     return rows;
