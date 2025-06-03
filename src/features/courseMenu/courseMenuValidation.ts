@@ -46,7 +46,7 @@ export const CourseSchema = z
         message: "The course name has to be at least 1 character long.",
       })
       .max(200, {
-        message: "The course name cannot exceed 50 characters.",
+        message: "The course name cannot exceed 200 characters.",
       }),
     type: z.string().regex(/\b(starter|main|dessert)\b/, {
       message:
@@ -73,7 +73,7 @@ export const CourseUpdateSchema = z
         message: "The course name has to be at least 1 character long.",
       })
       .max(200, {
-        message: "The course name cannot exceed 50 characters.",
+        message: "The course name cannot exceed 200 characters.",
       }),
     type: z.string().regex(/\b(starter|main|dessert)\b/, {
       message:
