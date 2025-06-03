@@ -15,7 +15,8 @@ export class SQLiteDrinkMenuRepo implements DrinkMenuRepo {
   async findAllDrinkMenus(): Promise<Array<DrinkMenuEntity>> {
     const rows = this.dbConnection
       .prepare(
-        "select id, title, subtitle, price_tot as priceTot from drink_menu"
+        `select id, title, subtitle, price_tot as priceTot from drink_menu 
+         order by id ASC`
       )
       .all() as Array<DrinkMenuEntity>;
     return rows;
@@ -54,7 +55,9 @@ export class SQLiteDrinkMenuRepo implements DrinkMenuRepo {
   ): Promise<Array<DrinkEntity>> {
     const rows = this.dbConnection
       .prepare(
-        `select id, drink_menu_id as drinkMenuId, name from drink where drink_menu_id = @drinkMenuId`
+        `select id, drink_menu_id as drinkMenuId, name from drink 
+         where drink_menu_id = @drinkMenuId 
+         order by id ASC`
       )
       .all({ drinkMenuId }) as Array<DrinkEntity>;
     return rows;

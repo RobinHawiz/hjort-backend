@@ -14,7 +14,10 @@ export class SQLiteCourseMenuRepo implements CourseMenuRepo {
 
   async findAllCourseMenus(): Promise<Array<CourseMenuEntity>> {
     const rows = this.dbConnection
-      .prepare("select id, title, price_tot as priceTot from course_menu")
+      .prepare(
+        `select id, title, price_tot as priceTot from course_menu 
+         order by id ASC`
+      )
       .all() as Array<CourseMenuEntity>;
     return rows;
   }
@@ -55,7 +58,9 @@ export class SQLiteCourseMenuRepo implements CourseMenuRepo {
   ): Promise<Array<CourseEntity>> {
     const rows = this.dbConnection
       .prepare(
-        `select id, course_menu_id as courseMenuId, name, type from course where course_menu_id = @courseMenuId`
+        `select id, course_menu_id as courseMenuId, name, type from course 
+         where course_menu_id = @courseMenuId
+         order by id ASC`
       )
       .all({ courseMenuId }) as Array<CourseEntity>;
     return rows;
