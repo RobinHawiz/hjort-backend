@@ -3,6 +3,10 @@ import jwt from "jsonwebtoken";
 import { NextFunction, Request, Response } from "express";
 dotenv.config();
 
+/**
+ * Middleware to verify JWTs for protected routes.
+ * Relies on `JWT_SECRET_KEY` from environment config for verification.
+ */
 export function authenticateToken(
   req: Request,
   res: Response,

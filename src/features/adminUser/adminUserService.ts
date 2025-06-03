@@ -4,9 +4,18 @@ import { AdminUserRepo } from "./adminUserRepo";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+/**
+ * Service layer for handling business logic related to admin user entities.
+ */
 export class AdminUserService {
   constructor(private readonly repo: AdminUserRepo) {}
 
+  /**
+   * Attempts to authenticate an admin user.
+   *
+   * @returns JWT string on successful login.
+   * @throws DomainError on failure.
+   */
   async loginUser(payload: AdminUserPayload): Promise<string> {
     const adminUserEntity = await this.repo.findByUsername(payload.username);
     if (!adminUserEntity) {

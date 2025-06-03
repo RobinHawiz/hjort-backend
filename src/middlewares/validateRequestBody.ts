@@ -2,6 +2,10 @@ import { ZodError, ZodSchema } from "zod";
 import { Request, Response, NextFunction } from "express";
 import { formatZodError } from "../errors/formatZodError";
 
+/**
+ * Factory for request body validation middleware using Zod schemas.
+ * Should be used before controller logic to enforce payload integrity.
+ */
 export const validateRequestBody =
   (schema: ZodSchema) =>
   (req: Request, res: Response, next: NextFunction): void => {
