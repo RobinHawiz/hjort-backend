@@ -44,7 +44,7 @@ export const DrinkSchema = z
         message: "The drink name has to be at least 1 character long.",
       })
       .max(200, {
-        message: "The drink name cannot exceed 50 characters.",
+        message: "The drink name cannot exceed 200 characters.",
       }),
   })
   .strict();
@@ -66,7 +66,7 @@ export const DrinkUpdateSchema = z
         message: "The drink name has to be at least 1 character long.",
       })
       .max(200, {
-        message: "The drink name cannot exceed 50 characters.",
+        message: "The drink name cannot exceed 200 characters.",
       }),
   })
   .strict();
