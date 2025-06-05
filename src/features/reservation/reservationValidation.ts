@@ -52,7 +52,14 @@ export const ReservationSchema = z
     message: z.string().max(1000, {
       message: "The message cannot exceed 1000 characters.",
     }),
-    guestAmount: z.number().positive(),
+    guestAmount: z
+      .number()
+      .min(1, {
+        message: "The guestAmount has to number at least 1.",
+      })
+      .max(6, {
+        message: "The guestAmount cannot exceed 6.",
+      }),
     reservationDate: z
       .string()
       .regex(
