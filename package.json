@@ -11,7 +11,7 @@
     "clean": "rimraf dist",
     "copy-db": "cpx db/hjort.db dist/db",
     "backup-copy-db": "cpx dist/db/hjort.db db/ ",
-    "install": "node install.js",
+    "install-db": "node install.js",
     "registerAdminUser": "node registerAdminUser.js",
     "generateSecretKey": "node generateSecretKey.js"
   },
