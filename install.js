@@ -1,5 +1,6 @@
-import Database from "better-sqlite3";
-import dotenv from "dotenv";
+const Database = require("better-sqlite3");
+const dotenv = require("dotenv");
+
 dotenv.config();
 
 // Connect
