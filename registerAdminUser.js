@@ -1,5 +1,5 @@
-import Database from "better-sqlite3";
-import bcrypt from "bcrypt";
+const Database = require("better-sqlite3");
+const bcrypt = require("bcrypt");
 
 async function createAdminUser() {
   try {
