@@ -121,7 +121,7 @@ SQLite handles persistence, while validation and data constraints are enforced a
 |------------|-----------------------|------------------|-----------------------|
 | `id`       | INTEGER AUTOINCREMENT | Primary key      | None                  |
 | `title`    | TEXT                  | Menu title       | string, min 1, max 50 |
-| `priceTot` | INTEGER               | Menu total price | integer, min 0        |
+| `priceTot` | INTEGER               | Menu total price | integer, min 1        |
 
 ### 🍲 Course
 
@@ -139,7 +139,7 @@ SQLite handles persistence, while validation and data constraints are enforced a
 | `id`       | INTEGER AUTOINCREMENT | Primary key       | None                  |
 | `title`    | TEXT                  | Menu title        | string, min 1, max 50 |
 | `subtitle` | TEXT                  | Optional subtitle | string, max 100       |
-| `priceTot` | INTEGER               | Total menu price  | integer, min 0        |
+| `priceTot` | INTEGER               | Total menu price  | integer, min 1        |
 
 ### 🍷 Drink
 
