@@ -73,6 +73,13 @@ You only need to register an admin user:
 node registerAdminUser.js
 ```
 
+This will create a default admin account with:
+
+- Username: example
+- Password: example
+
+> 🛠️ Note: If you want to change these credentials, you'll need to manually edit the registerAdminUser.js file before running the command.
+
 🚀 Step 5: Run the server
 ```
 npm run build
