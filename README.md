@@ -1,3 +1,5 @@
+> ⚠️ **Deprecated** — This service has been replaced by the ASP.NET Core API at https://github.com/RobinHawiz/hjort-backend-dotnet. 
+
 # Hjort Restaurant Backend API
 
 This is the RESTful backend powering both the public frontend and internal CMS for Hjort Restaurant.
